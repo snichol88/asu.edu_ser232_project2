@@ -1,14 +1,18 @@
 `timescale 1ns / 1ps
 
 ////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer:
 //
-// Engineer: Sean Nichol
+// Create Date:   19:43:44 04/15/2015
+// Design Name:   project2_m
+// Module Name:   
+// Project Name:  project2_tb
+// Target Device:  
+// Tool versions:  
+// Description: 
 //
-// Create Date:   18:39:54 04/11/2015
-// Design Name: 	project2
-// 
-//
-// Verilog Test Fixture created by ISE for module: add_sub
+// Verilog Test Fixture created by ISE for module: project2_m
 //
 // Dependencies:
 // 
@@ -18,65 +22,71 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-module testbench;
+module sjnicho1_tb;
 
 	// Inputs
-	reg [3:0] A;
-	reg [3:0] B;
-	reg S;
-	reg [6:0] lcd;
+	reg [3:0] a;
+	reg [3:0] b;
+	reg s;
 
 	// Outputs
-	wire [3:0] total;
-	wire Carry;
-	wire OV;
+	wire [6:0] lcd;
+	wire lcd_o;
+	
+	
 
 	// Instantiate the Unit Under Test (UUT)
-		add_sub uut (
-		.total(total), 
-		.Carry(Carry), 
-		.OV(OV), 
-		.A(A), 
-		.B(B), 
-		.S(S),
-		.lcd(lcd)
+	project2_m uut (
+		.a(a), 
+		.b(b), 
+		.s(s), 
+		.lcd(lcd), 
+		.lcd_o(lcd_o)
 	);
 
 	initial begin
-	$monitor("A=(%b), B=(%b), S=(%b), lcd=(%b)" ,A,B,S, lcd);
+	$monitor("a=%b, b=%b, s=%b, lcd=%b, lcd_o=%b",a,b,s,lcd,lcd_o);
 		// Initialize Inputs
-		A = 5;
-		B = 4;
-		S = 0;
-		
+		a = 6;
+		b = 1;
+		s = 1;
+
+		// Wait 100 ns for global reset to finish
+		#100;
+		// Initialize Inputs
+		a = 8;
+		b = 1;
+		s = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
 		
 		// Initialize Inputs
-		A = 0001;
-		B = 0001;
-		S = 0;
-		// Wait 100 ns for global reset to finish
-		#100;       
-		
-		A = 0001;
-		B = 0001;		
-		S = 0;
-		
-		#100;        
-		  
-		A = 5;
-		B = 1;
-		S = 1;
-		#100;        
-		
-		A = 9;
-		B = 8;
-		S = 1;		
-		#100;
+		a = 2;
+		b = 1;
+		s = 0;
 
+		// Wait 100 ns for global reset to finish
+		#100;
+		
+		// Initialize Inputs
+		a = 9;
+		b = 4;
+		s = 1;
+
+		// Wait 100 ns for global reset to finish
+		#100;
+		
+		// Initialize Inputs
+		a = 9;
+		b = 3;
+		s = 0;
+
+		// Wait 100 ns for global reset to finish
+		#100;
 
 	end
       
+		
 endmodule
+
