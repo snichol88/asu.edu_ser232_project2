@@ -88,7 +88,7 @@ module  mux(
 	assign mux_out = mux;	
 
 	//begin block to choose calculation based upon input s
-	//account for overflow if larger than 32768 or 1000000000000000
+	//account for overflow 
 	always @ (s or addition or subtract or multiply or divide or increase or decrease or bit_and or bit_xor or bit_or or ovf)
 	begin : MUX
 		//addition if 0 is chosen
@@ -102,7 +102,7 @@ module  mux(
 		end 
 		
 		//subtraction if 1 is chosen
-		//accounts for over flow if > 32768 or < -32768
+		//accounts for over flow 
 		else if(s == 4'b0001) begin
 			assign mux = subtract;
 			if (subtract > 65535 || subtract < 0)
@@ -113,7 +113,7 @@ module  mux(
 		end 
 		
 		//multiplication if 2 is chosen
-		//accounts for over flow if > 32768 or < -32768
+		//accounts for over flow 
 		else if(s == 4'b0010) begin
 			assign mux = multiply;
 			if (multiply > 65535)
