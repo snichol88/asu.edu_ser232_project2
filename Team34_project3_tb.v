@@ -4,15 +4,15 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   19:42:11 04/23/2015
-// Design Name:   project2_m
-// Module Name:   C:/Users/sjnicho1/Desktop/test/TEST2/team34_tb.v
-// Project Name:  TEST2
+// Create Date:   
+// Design Name:   
+// Module Name:   
+// Project Name:  
 // Target Device:  
 // Tool versions:  
 // Description: 
 //
-// Verilog Test Fixture created by ISE for module: project2_m
+// Verilog Test Fixture created by ISE for module: 
 //
 // Dependencies:
 // 
